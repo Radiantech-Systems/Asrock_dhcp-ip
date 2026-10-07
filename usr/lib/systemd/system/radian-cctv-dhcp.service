@@ -1,0 +1,12 @@
+[Unit]
+Description=Radian CCTV DHCP Service
+After=network.target dnsmasq.service
+Wants=dnsmasq.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/radian-cctv-dhcp.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
